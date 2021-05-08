@@ -3,11 +3,11 @@ package dataAccess;
 import core.RegisterAdapter;
 import entities.concretes.User;
 
-public class ExternalRegister implements UserDao{
+public class ExternalUserProcessImpl implements UserProcess {
 
     private RegisterAdapter registerAdapter;
 
-    public ExternalRegister(RegisterAdapter registerAdapter) {
+    public ExternalUserProcessImpl(RegisterAdapter registerAdapter) {
         this.registerAdapter = registerAdapter;
     }
 

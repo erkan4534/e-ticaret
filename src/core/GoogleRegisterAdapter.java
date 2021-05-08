@@ -2,7 +2,7 @@ package core;
 
 import entities.concretes.User;
 
-public class GoogleRegisterAdapter implements RegisterAdapter{
+public class GoogleRegisterAdapter implements RegisterAdapter {
 
     public boolean register(User user) {
         GoogleRegisterApi googleRegisterApi = new GoogleRegisterApi();

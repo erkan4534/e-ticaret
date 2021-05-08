@@ -1,17 +1,17 @@
 package business.concretes;
 
 import business.abstracts.UserService;
-import dataAccess.UserDao;
+import dataAccess.UserProcess;
 import entities.concretes.User;
 
 public class UserManager implements UserService {
 
-    private UserDao userDao;
+    private UserProcess userProcess;
 
     private UserValidation userValidation;
 
-    public UserManager(UserDao userDao) {
-        this.userDao = userDao;
+    public UserManager(UserProcess userProcess) {
+        this.userProcess = userProcess;
         userValidation= new UserValidation();
     }
 
@@ -20,7 +20,7 @@ public class UserManager implements UserService {
         if(!userValidation.isValidUserRegister(user)){
             return;
         }
-        if(userDao.register(user)){
+        if(userProcess.register(user)){
             System.out.println("User is registered");
         }else{
             System.out.println("User already is exist");
@@ -29,7 +29,7 @@ public class UserManager implements UserService {
 
     @Override
     public void login(User user) {
-        if(userDao.login(user)){
+        if(userProcess.login(user)){
             System.out.println("User login in the system");
         }else{
             System.out.println("User not login,please check your password and email");

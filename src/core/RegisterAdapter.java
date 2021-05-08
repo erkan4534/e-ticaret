@@ -1,6 +1,5 @@
 package core;
 
-import dataAccess.ExternalRegister;
 import entities.concretes.User;
 
 public interface RegisterAdapter {

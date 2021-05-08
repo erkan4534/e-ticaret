@@ -1,8 +1,8 @@
 import business.abstracts.UserService;
 import business.concretes.UserManager;
 import core.GoogleRegisterAdapter;
-import dataAccess.ExternalRegister;
-import dataAccess.UserRegister;
+import dataAccess.ExternalUserProcessImpl;
+import dataAccess.InternalUserProcessImpl;
 import entities.concretes.User;
 
 public class Main {
@@ -16,8 +16,11 @@ public class Main {
         user.setSurname("Kaya");
         user.setEmail("ali.kaya@gmail.com");
 
-        UserService userService = new UserManager(new ExternalRegister(new GoogleRegisterAdapter()));
-        userService.login(user);
+        UserService userService1 = new UserManager(new ExternalUserProcessImpl(new GoogleRegisterAdapter()));
+        userService1.login(user);
+
+        UserService userService2 = new UserManager(new InternalUserProcessImpl());
+        userService2.login(user);
 
     }
 }

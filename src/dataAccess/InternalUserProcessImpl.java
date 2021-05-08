@@ -2,7 +2,7 @@ package dataAccess;
 
 import entities.concretes.User;
 
-public class UserRegister implements UserDao{
+public class InternalUserProcessImpl implements UserProcess {
 
     @Override
     public boolean register(User user) {
